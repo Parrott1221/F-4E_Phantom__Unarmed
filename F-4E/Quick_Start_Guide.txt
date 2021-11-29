@@ -1,0 +1,48 @@
+START UP GUIDE
+
+
+1) INITIALIZATION
+
+     The model will initialize on the ground with:
+         gear down
+         flaps up
+         canopy closed
+         engines running
+         parking brake on
+         gunsight off
+         elevator trim 0.05 ANU
+         HSI in TACAN mode (channel 041X)
+         radar on, range mode set to 40 nm.
+
+     Armament load:
+         Stations 1 and 5:  370 gallon fuel tanks
+         Stations 2 and 4:  3 Mk-82 slicks and 2 AIM-9
+         Stations 3:        empty         
+
+
+3) TAKEOFF
+
+     Set flaps to half.
+     Release parking brake.
+     Apply full power and go.
+     Rotate at about 150 knots.
+
+4) LANDING
+
+     Set full flaps and gear down.
+
+5) SHUTDOWN
+
+     Normally both engines are "selected".
+     "Shift-Q" toggles the fuel shutoff valve on every selected engine.
+ 
+6) RESTART (GROUND)
+  
+     Normally both engines are "selected".
+     Hit the "s" key to engage starter on every selected engine.     
+     When N2 is above 15% hit "Shift-Q" to re-open fuel shutoff valves.
+
+7) RESTART (AIR)
+
+     Increase speed to attain at least 15% N2 (or use starter to assist).
+     Hit "Shift-Q" to re-open fuel shutoff valves.

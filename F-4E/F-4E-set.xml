@@ -1,0 +1,617 @@
+<?xml version="1.0"?>
+
+<!-- License:  Creative Commons 4.0, "CC-BY-NC-SA"   -->
+<!-- Author:   David Culp, Alpha Simulations   -->
+<!-- Email:    daveculp@cox.net                -->
+
+<PropertyList>
+
+ <sim>
+
+  <description>McDonnell F-4E Phantom II Unarmed</description>
+  <author>Dave Culp, Parrott Industries team</author>
+  <status>alpha</status>
+
+  <flight-model>jsb</flight-model>
+  <aero>F4E-jsbsim</aero>
+
+  <startup>
+   <splash-texture>Aircraft/F-4E/F-4E-splash.png</splash-texture>
+  </startup>
+
+  <gui>
+   <style>
+    <colors>
+     <splash-screen>
+      <red>0</red>
+      <green>0.05</green>
+      <blue>0</blue>
+     </splash-screen>
+     <splash-font>
+      <red>0.31</red>
+      <blue>0.19</blue>
+      <green>0.4</green>
+     </splash-font>
+    </colors>
+   </style>
+  </gui>
+
+  <sound>
+   <path>Aircraft/F-4E/Sounds/F4E-sound.xml</path>
+  </sound>
+
+  <submodels> 
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/F-4E/submodels.xml</path>
+  </submodels>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+
+  <panel>
+    <visibility>false</visibility>
+  </panel>
+
+  <model>
+   <path>Aircraft/F-4E/Models/F-4E.xml</path>
+  </model>
+
+  <flaps>
+   <setting>0.000</setting>
+   <setting>0.500</setting>
+   <setting>1.000</setting>
+  </flaps>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <pitch-offset-deg>-5.4</pitch-offset-deg>
+    <x-offset-m archive="y">0</x-offset-m>
+    <y-offset-m archive="y">1.42</y-offset-m>
+    <z-offset-m archive="y">-5.35</z-offset-m>
+   </config>
+  </view>
+
+<!-- GIB View
+    <pitch-offset-deg>-3.0</pitch-offset-deg>
+    <x-offset-m archive="y">0</x-offset-m>
+    <y-offset-m archive="y">1.64</y-offset-m>
+    <z-offset-m archive="y">-4.23</z-offset-m>
+-->
+
+  <help>
+   <title>F-4E Phantom II</title>
+   <key>
+    <name>c (lower case c) </name>
+    <desc>Toggle canopy</desc>
+   </key>
+   <key>
+    <name>n (lower case n) </name>
+    <desc>Toggle tailhook</desc>
+   </key>
+   <key>
+    <name>f (lower case f) </name>
+    <desc>Toggle refueling system</desc>
+   </key>
+   <key>
+    <name>m (lower case m) </name>
+    <desc>Nose wheel steering (hold down)</desc>
+   </key>
+   <key>
+    <name>Shift-Q</name>
+    <desc>Toggle fuel cutoff switches</desc>
+   </key>
+   <key>
+    <name>s (lower case s)</name>
+    <desc>Toggle starter valves</desc>
+   </key>
+   <key>
+    <name>e (lower case e)</name>
+    <desc>Release selected stores</desc>
+   </key>
+   <key>
+    <name>d (lower case d)</name>
+    <desc>Deploy drag 'chute</desc>
+   </key>
+   <key>
+    <name>j (lower case j)</name>
+    <desc>Jettison drag 'chute</desc>
+   </key>
+   <key>
+    <name>1 </name>
+    <desc>Select Stations 1 and 5, deselect others</desc>
+   </key>
+   <key>
+    <name>2 </name>
+    <desc>Select Stations 2 and 4, deselect others</desc>
+   </key>
+   <key>
+    <name>3 </name>
+    <desc>Select Station 3, deselect others</desc>
+   </key>
+   <key>
+    <name>Shift 1 </name>
+    <desc>Select Stations 1 and 5</desc>
+   </key>
+   <key>
+    <name>Shift 2 </name>
+    <desc>Select Stations 2 and 4</desc>
+   </key>
+   <key>
+    <name>Shift 3 </name>
+    <desc>Select Station 3</desc>
+   </key>
+   <key>
+    <name>0 </name>
+    <desc>Deselect All Stations</desc>
+   </key>
+   <line> </line>
+   <line>Takeoff: full flaps, rotate at 160 kts.</line>
+   <line>Climb  : 400 kts. / 0.85 mach</line>
+   <line>Cruise : 0.90 mach</line> 
+   <line>Landing: full flaps, land at 135 kts. + 3 kts. per 1000 lbs fuel.</line>
+   <line> </line>
+   <line>Half flaps limit: 280 knots. </line>
+   <line>Gear limit: 260 knots. </line>
+   <line>Full Flap limit: 200 knots.</line>
+   <line>Drag'chute limit: 200 knots.</line>
+   <line>G limit (operational): 7.3</line>
+   <line>G limit (structural): 9.0</line>
+   <line>NOTE: If you exceed 9.0 you will crash</line>
+   <line> </line>
+   <line>Clickable panel.  Hit Ctrl-C to see hot spots.</line>
+  </help>
+
+  <rendering>
+    <redout>
+      <parameters>
+        <blackout-onset-g>4.0</blackout-onset-g>
+        <blackout-complete-g>8.0</blackout-complete-g>
+      </parameters> 
+    </redout>
+  </rendering>
+
+  <multiplay>
+    <generic>
+<!-- <float n="0"/> --> <!-- rotating beacon amplitude --> 
+<!-- <float n="1"/> --> <!-- nose wheel steering angle --> 
+<!-- <float n="6"/> --> <!-- drag chute position/shape --> 
+     <int n="0" type="int">0</int> <!-- unused -->
+     <int n="1" type="int">0</int> <!-- unused -->
+     <int n="2" type="int">0</int> <!-- unused -->
+     <int n="3" type="int">0</int> <!-- unused -->
+     <int n="4" type="int">0</int> <!-- wingtip vortex trigger-->
+     <int n="5" type="int">0</int> <!-- engines contrail trigger -->
+     <int n="6" type="int">0</int> <!-- drag chute trigger -->
+     <int n="7" type="int">0</int> <!-- unused -->
+     <int n="8" type="int">0</int> <!-- unused -->
+     <int n="9" type="int">0</int> <!-- unused -->
+     <int n="10" type="int">0</int> <!-- left engine afterburner flame -->
+     <int n="11" type="int">0</int> <!-- right engine afterburner flame -->
+     <int n="12" type="int">0</int> <!-- unused -->
+     <int n="13" alias="controls/armament/trigger"/> <!-- for "bombable" cannon -->
+     <int n="14" alias="fdm/jsbsim/systems/armament/bomb1/released"/> <!-- for "bombable" bomb -->
+     <int n="15" alias="fdm/jsbsim/systems/armament/bomb2/released"/> <!-- for "bombable" bomb -->
+     <int n="16" alias="fdm/jsbsim/systems/armament/bomb3/released"/> <!-- for "bombable" bomb -->
+     <int n="17" alias="fdm/jsbsim/systems/armament/bomb4/released"/> <!-- for "bombable" bomb -->
+     <int n="18" alias="fdm/jsbsim/systems/armament/bomb5/released"/> <!-- for "bombable" bomb -->
+     <int n="19" alias="fdm/jsbsim/systems/armament/bomb6/released"/> <!-- for "bombable" bomb -->
+     <string n="9" type="string"/> <!-- for "bombable" communication -->
+    </generic>
+  </multiplay>
+
+  <menubar>
+    <default>
+      <menu n="100">
+        <label>FDM</label>
+        <enabled type="bool">true</enabled>
+
+        <item>
+          <label>Aero Data</label>
+          <binding>
+            <command>nasal</command>
+            <script>display.show_aero_data_window();</script>
+          </binding>
+        </item>
+
+        <item>
+          <label>Jet Data</label>
+          <binding>
+            <command>nasal</command>
+            <script>display.show_jet_data_window();</script>
+          </binding>
+        </item>
+
+        <item>
+          <label>Hide Data</label>
+          <binding>
+            <command>nasal</command>
+            <script>display.close_data_windows();</script>
+          </binding>
+        </item>
+
+      </menu>
+    </default>
+  </menubar>
+
+ </sim>
+
+ <controls>
+  <flight>
+   <elevator-trim>-0.05</elevator-trim>
+   <chute_jettisoned type="int">0</chute_jettisoned>
+  </flight>
+  <lighting>
+   <instruments-norm>0.3</instruments-norm>
+   <formation-norm type="double">1.0</formation-norm>
+   <landing type="double">1</landing>
+  </lighting>
+  <armament>
+   <gunsight>
+    <power-on type="bool">false</power-on>
+    <intensity type="double">0.3</intensity>
+   </gunsight>
+  </armament>
+  <gear>
+    <brake-parking type="double">1.0</brake-parking>
+  </gear>
+ </controls>
+
+ <input>
+   <keyboard>
+
+    <key n="99">
+     <name>c</name>
+     <desc>toggle canopy</desc>
+     <binding>
+       <command>property-toggle</command>
+       <property>fdm/jsbsim/systems/canopy/command</property>
+     </binding>
+    </key>
+
+   <key n="100">
+     <name>d</name>
+     <desc>Deploy braking chute</desc>
+     <binding>
+      <condition>
+       <equals>
+         <property>controls/flight/chute_jettisoned</property>
+         <value>0</value>
+       </equals>
+      </condition>
+      <command>property-assign</command>
+      <property>fdm/jsbsim/systems/chute/deploy</property>
+      <value type="int">1</value>
+     </binding>
+    </key>
+
+    <key n="106">
+      <name>j</name>
+      <desc>jettison braking chute</desc>
+      <binding>
+       <command>property-assign</command>
+       <property>fdm/jsbsim/systems/chute/deploy</property>
+       <value type="int">0</value>
+      </binding>
+      <binding>
+       <command>property-assign</command>
+       <property>controls/flight/chute_jettisoned</property>
+       <value type="int">1</value>
+      </binding>
+    </key>
+
+    <key n="81">
+     <name>Shift-Q</name>
+     <desc>Fuel Cutoff Switch or Lever.</desc>
+     <binding>
+      <condition>
+       <property>/sim/input/selected/engine[0]</property>
+      </condition>
+      <command>property-toggle</command>
+      <property>/controls/engines/engine[0]/cutoff</property>
+     </binding>
+     <binding>
+      <condition>
+       <property>/sim/input/selected/engine[1]</property>
+      </condition>
+      <command>property-toggle</command>
+      <property>/controls/engines/engine[1]/cutoff</property>
+     </binding>
+    </key>
+
+    <key n="102">
+      <name>f</name>
+      <desc>Toggle refueling system.</desc>
+      <binding>
+       <command>property-toggle</command>
+       <property>fdm/jsbsim/systems/refuel/armed</property>
+      </binding>
+    </key>
+
+    <key n="109">
+     <name>m</name>
+     <desc>engage nose wheel steering</desc>
+     <binding>
+      <command>property-assign</command>
+      <property>fdm/jsbsim/systems/NWS/engaged</property>
+      <value>1</value> 
+     </binding>
+     <mod-up>
+       <binding>
+        <command>property-assign</command>
+        <property>fdm/jsbsim/systems/NWS/engaged</property>
+        <value>0</value> 
+       </binding>
+     </mod-up>
+    </key>
+
+    <key n="110">
+      <name>n</name>
+      <desc>Toggle tailhook.</desc>
+      <binding>
+       <command>property-toggle</command>
+       <property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+      </binding>
+    </key>
+
+    <key n="115">
+     <name>s</name>
+     <desc>Toggle starter valves.</desc>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/engines/engine[0]/starter</property>
+     </binding>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/engines/engine[1]/starter</property>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>null</command>
+       </binding>
+     </mod-up>
+    </key>
+
+    <key n="101">
+     <name>e</name>
+     <desc>Release selected store(s)</desc>
+      <binding>
+       <command>property-assign</command>
+       <property>fdm/jsbsim/systems/armament/release</property>
+       <value>1</value>
+      </binding>
+     <mod-up>
+       <binding>
+        <command>property-assign</command>
+        <property>fdm/jsbsim/systems/armament/release</property>
+        <value>0</value> 
+       </binding>
+     </mod-up>
+    </key>
+
+ <key n="33">
+  <name>Shift 1</name>
+  <desc>Add Station 1</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station1/selected</property>
+   <value type="int">1</value>
+  </binding>
+ </key>
+
+ <key n="64">
+  <name>Shift 2</name>
+  <desc>Add Station 2</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station2/selected</property>
+   <value type="int">1</value>
+  </binding>
+ </key>
+
+ <key n="35">
+  <name>Shift 3</name>
+  <desc>Add Station 3</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station3/selected</property>
+   <value type="int">1</value>
+  </binding>
+ </key>
+
+ <key n="48">
+  <name>0</name>
+  <desc>De-select All Stations</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station1/selected</property>
+   <value type="int">0</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station2/selected</property>
+   <value type="int">0</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station3/selected</property>
+   <value type="int">0</value>
+  </binding>
+ </key>
+
+ <key n="49">
+  <name>1</name>
+  <desc>Select Stations 1 and 5 exclusively</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station1/selected</property>
+   <value type="int">1</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station2/selected</property>
+   <value type="int">0</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station3/selected</property>
+   <value type="int">0</value>
+  </binding>
+ </key>
+
+ <key n="50">
+  <name>2</name>
+  <desc>Select Stations 2 and 4 exclusively</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station1/selected</property>
+   <value type="int">0</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station2/selected</property>
+   <value type="int">1</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station3/selected</property>
+   <value type="int">0</value>
+  </binding>
+ </key>
+
+ <key n="51">
+  <name>3</name>
+  <desc>Select Station 3 exclusively</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station1/selected</property>
+   <value type="int">0</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station2/selected</property>
+   <value type="int">0</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>fdm/jsbsim/systems/armament/station3/selected</property>
+   <value type="int">1</value>
+  </binding>
+ </key>
+
+   </keyboard>
+ </input>
+
+ <engines>
+  <engine n="0">
+    <running>true</running>
+  </engine>
+  <engine n="1">
+    <running>true</running>
+  </engine>
+ </engines>
+
+
+ <fdm>
+  <jsbsim>
+   <simulation>
+     <sim-time-sec>0</sim-time-sec>
+   </simulation>
+   <systems>
+    <dump>
+      <armed type="double">0</armed>
+    </dump>
+    <radar>
+      <range type="int">40</range>
+    </radar>
+    <reverser>
+      <command type="double">0</command>
+    </reverser>
+    <canopy>
+      <command type="double">0</command>
+      <position type="double">0</position>
+    </canopy>
+    <wing_fold>
+      <command type="double">0</command>
+    </wing_fold>
+    <armament>
+      <station1>
+        <selected type="double">0</selected>
+      </station1>
+      <station2>
+        <selected type="double">1</selected>
+      </station2>
+      <station3>
+        <selected type="double">0</selected>
+      </station3>
+      <bomb1>
+        <released type="double">0</released>
+      </bomb1>
+      <bomb2>
+        <released type="double">0</released>
+      </bomb2>
+      <bomb3>
+        <released type="double">0</released>
+      </bomb3>
+      <bomb4>
+        <released type="double">0</released>
+      </bomb4>
+      <bomb5>
+        <released type="double">0</released>
+      </bomb5>
+      <bomb6>
+        <released type="double">0</released>
+      </bomb6>
+    </armament>
+    <ADC>
+      <density-altitude type="double">0</density-altitude>
+    </ADC>
+   </systems> 
+  </jsbsim>
+ </fdm>
+
+
+ <instrumentation>
+  <transponder>
+    <serviceable>true</serviceable>
+    <id-code>1200</id-code>
+    <mode-switch>4</mode-switch>
+  </transponder>
+  <marker-beacon>
+    <volume type="double" archive="y">0.0</volume>
+  </marker-beacon>
+  <radar>
+    <range type="int">40</range>
+  </radar>
+  <rdmi-mode type="int">0</rdmi-mode> <!-- 0=TAC, 1=VOR, 2=ADF -->
+  <tacan n="0">
+    <name type="string">tacan1</name>
+    <serviceable type="bool" archive="y">true</serviceable>
+    <frequencies>
+      <selected-channel n="1">0</selected-channel>
+      <selected-channel n="2">4</selected-channel>
+      <selected-channel n="3">1</selected-channel>
+      <selected-channel n="4">X</selected-channel>
+    </frequencies>
+  </tacan>
+ </instrumentation>
+
+ <systems>
+   <refuel>
+     <contact type="bool">false</contact>
+     <type>boom</type>
+   </refuel>
+ </systems>
+
+ <nasal>
+   <aar>
+     <file>Aircraft/DavePack/Nasal/aar_jsbsim.nas</file>
+   </aar>
+   <init>
+     <file>Aircraft/DavePack/Nasal/version.nas</file>
+   </init>
+   <display>
+     <file>Aircraft/DavePack/Nasal/display.nas</file>
+   </display>
+ </nasal>
+
+</PropertyList>

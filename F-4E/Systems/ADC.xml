@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+
+<system name="ADC">
+
+  <!-- This channel calculates density altitude from rho.  Data is from the 1976 US Std. Atm -->
+
+  <channel name="densityalt">
+
+    <fcs_function name="systems/ADC/density-altitude">
+    <function>
+      <table>
+        <independentVar lookup="row">atmosphere/rho-slugs_ft3</independentVar>
+         <tableData>
+            0.0000005327 200000.0
+            0.00003318   100000.0
+            0.00004196    95000.0
+            0.00005315    90000.0
+            0.00006743    85000.0
+            0.00008571    80000.0
+            0.0001091     75000.0
+            0.0001392     70000.0
+            0.0001777     65000.0
+            0.0001864     64000.0
+            0.0001955     63000.0
+            0.0002050     62000.0
+            0.0002151     61000.0
+            0.0002256     60000.0
+            0.0002367     59000.0
+            0.0002482     58000.0
+            0.0002604     57000.0
+            0.0002731     56000.0
+            0.0002865     55000.0
+            0.0003006     54000.0
+            0.0003153     53000.0
+            0.0003307     52000.0
+            0.0003469     51000.0
+            0.0003639     50000.0
+            0.0003817     49000.0
+            0.0004005     48000.0
+            0.0004201     47000.0
+            0.0004407     46000.0
+            0.0004623     45000.0
+            0.0004849     44000.0
+            0.0005087     43000.0
+            0.0005336     42000.0
+            0.0005598     41000.0
+            0.0005873     40000.0
+            0.0006161     39000.0
+            0.0006463     38000.0
+            0.0006780     37000.0
+            0.0007103     36000.0
+            0.0007382     35000.0
+            0.0007670     34000.0
+            0.0007966     33000.0
+            0.0008270     32000.0
+            0.0008584     31000.0
+            0.0008907     30000.0
+            0.0009239     29000.0
+            0.0009580     28000.0
+            0.0009931     27000.0
+            0.0010292     26000.0
+            0.0010663     25000.0
+            0.0011043     24000.0
+            0.0011435     23000.0
+            0.0011836     22000.0
+            0.0012249     21000.0
+            0.0012673     20000.0
+            0.0013107     19000.0
+            0.0013553     18000.0
+            0.0014011     17000.0
+            0.0014480     16000.0
+            0.0014962     15000.0
+            0.0015455     14000.0
+            0.0015961     13000.0
+            0.0016480     12000.0
+            0.0017011     11000.0
+            0.0017555     10000.0
+            0.0018113      9000.0
+            0.0018685      8000.0
+            0.0019270      7000.0
+            0.0019869      6000.0
+            0.0020482      5000.0
+            0.0021109      4000.0
+            0.0021752      3000.0
+            0.0022409      2000.0
+            0.0023081      1000.0 
+            0.0023769         0.0
+            0.0024472     -1000.0
+         </tableData>
+      </table>
+     </function>
+     </fcs_function>
+
+  </channel>
+
+  <!-- This channel models 3 squat switches with a 2 second delay, and is used to determine -->
+  <!-- whether the aircraft is airborne.  The 2 second delay is added for use by the sound  -->
+  <!-- effects system for triggering the "tire squeal" sound. -->
+
+  <channel name="airborne-switch">
+  
+     <switch name="systems/ADC/squat-sum">
+        <default value="0"/>
+        <test logic="AND" value="1">
+            gear/unit[0]/compression-ft LT 0.02
+            gear/unit[1]/compression-ft LT 0.02
+            gear/unit[2]/compression-ft LT 0.02
+        </test>
+        <delay type="time">2</delay>
+        <output>systems/ADC/airborne</output>
+     </switch>
+
+  </channel>
+
+</system>
+ 

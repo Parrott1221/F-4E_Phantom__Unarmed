@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<system name="test-aero">
+
+
+  <channel name="test">
+
+     <fcs_function name="systems/test-aero/VerticalSpeed-fpm">
+       <function>
+         <product>
+             <property>velocities/h-dot-fps</property>
+             <value>60.0</value>
+         </product>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-aero/FlightPathAngle-deg">
+       <function>
+         <product>
+             <property>flight-path/gamma-rad</property>
+             <value>57.2957795</value>
+         </product>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-aero/Drag-lbs">
+       <function>
+          <product>
+              <property>forces/fwx-aero-lbs</property>
+              <value>1.0</value> 
+          </product>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-aero/Lift-lbs">
+       <function>
+          <product>
+              <property>forces/fwz-aero-lbs</property>         
+              <value>1.0</value> 
+          </product>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-aero/LoverD">
+       <function>
+         <quotient>
+           <property>systems/test-aero/Lift-lbs</property>
+           <property>systems/test-aero/Drag-lbs</property>
+         </quotient>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-aero/GlideRatio">
+       <function>
+         <quotient>
+           <value>-1.0</value>
+           <tan><property>flight-path/gamma-rad</property></tan>
+         </quotient>
+       </function>
+     </fcs_function>
+
+  </channel>
+
+
+</system>

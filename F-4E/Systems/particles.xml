@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<!-- This system sets the trigger properties for certain OSG particle  -->
+<!-- system animations.  The multiplay properties allow the effects to -->  
+<!-- be seen over multiplayer.                                         -->
+
+<system name="particles">
+
+  <property value="0">systems/particles/engine-1-running</property>
+  <property value="0">systems/particles/engine-2-running</property>
+  <property value="0">systems/particles/running-number</property>
+
+ 
+  <channel>
+
+     <!-- engine 1 -->
+     <switch name="running 1">
+          <default value="0"/>
+          <test value="1">
+              /engines/engine[0]/running gt 0
+          </test>
+          <output>systems/particles/engine-1-running</output>
+     </switch>
+
+     <!-- engine 2 -->
+     <switch name="running 2">
+          <default value="0"/>
+          <test value="1">
+              /engines/engine[1]/running gt 0
+          </test>
+          <output>systems/particles/engine-2-running</output>
+     </switch>
+
+
+     <!-- creates a number (0 to 2) representing which engines are running -->
+     <fcs_function name="running number">
+      <function>
+        <sum>
+         <property>systems/particles/engine-1-running</property>
+         <product>
+           <property>systems/particles/engine-2-running</property>
+           <value>2</value>
+         </product>
+        </sum>
+      </function>
+      <output>systems/particles/running-number</output>
+     </fcs_function>
+
+
+     <switch name="contrail test">
+          <default value="0"/>
+          <test value="systems/particles/running-number">
+                position/h-sl-ft gt 30000
+          </test>
+          <output>/sim/multiplay/generic/int[5]</output>
+     </switch>
+
+  </channel>
+
+
+  <channel>
+
+     <switch name="vortex test">
+          <default value="0"/>
+          <test value="1">
+                aero/alpha-rad gt 0.1573
+                velocities/mach gt 0.1
+          </test>
+          <output>/sim/multiplay/generic/int[4]</output>
+     </switch>
+
+  </channel>
+
+</system>

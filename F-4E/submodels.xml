@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!--
+  <submodel>
+    <name>jettison centerline fuel tank</name>
+    <model>Aircraft/F-4E/Models/Stores/Tank_600/tank.ac</model>
+    <trigger>fdm/jsbsim/systems/armament/release</trigger>
+    <trigger-once>true</trigger-once>
+    <z-offset> -2.0</z-offset>
+    <speed>0</speed>
+    <count>1</count>
+    <aero_stabilized>true</aero_stabilized>
+    <eda>1.0</eda>
+    <weight>250.0</weight>
+    <cd>0.3</cd>
+    <collision>false</collision>
+    <impact>false</impact>
+  </submodel>
+-->
+
+  <!-- Drag Chute -->
+  <submodel>
+    <name>Braking Parachute</name>
+    <model>Aircraft/DavePack/Stores/Chute/fullchute.ac</model>
+    <trigger>controls/flight/chute_jettisoned</trigger>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <count>1</count>
+    <x-offset>-40</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>0</z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <buoyancy>25</buoyancy>
+    <wind>true</wind>
+    <life>4.0</life> 
+    <eda>250</eda>
+    <weight>50</weight>
+    <aero-stabilised>false</aero-stabilised>
+  </submodel>
+
+  <submodel>
+    <name>jettison left fuel tank</name>
+    <model>Aircraft/F-4E/Models/Stores/Tank_370/tank.ac</model>
+    <trigger>fdm/jsbsim/systems/armament/station1/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0</speed>
+    <count>1</count>
+    <x-offset> -0.2</x-offset>
+    <y-offset>-12.0</y-offset>
+    <z-offset> -3.0</z-offset>
+    <pitch-offset>-2</pitch-offset>
+    <eda>1.0</eda>
+    <weight>250.0</weight>
+    <cd>0.3</cd>
+    <collision>false</collision>
+    <impact>false</impact>
+  </submodel>
+
+  <submodel>
+    <name>jettison right fuel tank</name>
+    <model>Aircraft/F-4E/Models/Stores/Tank_370/tank.ac</model>
+    <trigger>fdm/jsbsim/systems/armament/station1/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0</speed>
+    <count>1</count>
+    <x-offset> -0.2</x-offset>
+    <y-offset> 12.0</y-offset>
+    <z-offset> -3.0</z-offset>
+    <pitch-offset>-2</pitch-offset>
+    <eda>1.0</eda>
+    <weight>250.0</weight>
+    <cd>0.3</cd>
+    <collision>false</collision>
+    <impact>false</impact>
+  </submodel>
+
+  <submodel>
+    <name>bomb1, station 2, (500 pound)</name>
+    <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
+    <trigger>fdm/jsbsim/systems/armament/bomb1/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0.0</speed>
+    <count>1</count>
+    <x-offset>6.08</x-offset>
+    <y-offset>-7.68</y-offset>
+    <z-offset>-3.5</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-3.0</pitch-offset>
+    <eda>1.0</eda>
+    <weight>520.0</weight>
+    <cd>0.3</cd>
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+    <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>bomb2, station 2, (500 pound)</name>
+    <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
+    <trigger>fdm/jsbsim/systems/armament/bomb2/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0.0</speed>
+    <count>1</count>
+    <x-offset>6.08</x-offset>
+    <y-offset>-6.88</y-offset>
+    <z-offset>-3.8</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-3.0</pitch-offset>
+    <eda>1.0</eda>
+    <weight>520.0</weight>
+    <cd>0.3</cd>
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+    <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>bomb3, station 2, (500 pound)</name>
+    <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
+    <trigger>fdm/jsbsim/systems/armament/bomb3/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0.0</speed>
+    <count>1</count>
+    <x-offset>6.08</x-offset>
+    <y-offset>-6.07</y-offset>
+    <z-offset>-3.5</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-3.0</pitch-offset>
+    <eda>1.0</eda>
+    <weight>520.0</weight>
+    <cd>0.3</cd>
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+    <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>bomb4, station 4, (500 pound)</name>
+    <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
+    <trigger>fdm/jsbsim/systems/armament/bomb4/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0.0</speed>
+    <count>1</count>
+    <x-offset>6.08</x-offset>
+    <y-offset> 6.07</y-offset>
+    <z-offset>-3.5</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-3.0</pitch-offset>
+    <eda>1.0</eda>
+    <weight>520.0</weight>
+    <cd>0.3</cd>
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+    <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>bomb5, station 4, (500 pound)</name>
+    <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
+    <trigger>fdm/jsbsim/systems/armament/bomb5/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0.0</speed>
+    <count>1</count>
+    <x-offset>6.08</x-offset>
+    <y-offset> 6.88</y-offset>
+    <z-offset>-3.8</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-3.0</pitch-offset>
+    <eda>1.0</eda>
+    <weight>520.0</weight>
+    <cd>0.3</cd>
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+    <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>bomb6, station 4, (500 pound)</name>
+    <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
+    <trigger>fdm/jsbsim/systems/armament/bomb6/released</trigger>
+    <trigger-once>true</trigger-once>
+    <speed>0.0</speed>
+    <count>1</count>
+    <x-offset>6.08</x-offset>
+    <y-offset> 7.68</y-offset>
+    <z-offset>-3.5</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-3.0</pitch-offset>
+    <eda>1.0</eda>
+    <weight>520.0</weight>
+    <cd>0.3</cd>
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+    <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>tracer</name>
+    <model>Aircraft/DavePack/Stores/guns/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.15</delay>
+    <count>-1</count>
+    <x-offset> 31.0</x-offset>
+    <y-offset>  0.0</y-offset>
+    <z-offset> -1.6</z-offset>
+    <pitch-offset>-2.8</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+  </submodel>
+
+  <submodel>
+    <name>bullet (cannon)</name>
+    <model>Models/Geometry/null.ac</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0</delay>
+    <count>-1</count>
+    <x-offset> 31.0</x-offset>
+    <y-offset>  0.0</y-offset>
+    <z-offset> -1.6</z-offset>
+    <pitch-offset>-2.8</pitch-offset>
+    <life>10.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/cannon</impact-report>
+    <submodel-path>Aircraft/DavePack/Stores/guns/bullet-submodel.xml</submodel-path>
+  </submodel>
+
+  <submodel> 
+    <name>gunsmoke</name>
+    <model>Aircraft/DavePack/Stores/guns/smoke.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.01</delay>
+    <count>-1</count>
+    <x-offset> 28.0</x-offset>
+    <y-offset>  0.0</y-offset>
+    <z-offset> -2.0</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-60.0</pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>1</life>
+  </submodel>
+
+</PropertyList>

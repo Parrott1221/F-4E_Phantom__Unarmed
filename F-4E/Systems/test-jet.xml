@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<system name="test-jet">
+
+
+  <channel name="test">
+
+     <fcs_function name="systems/test-jet/OAT-degC">
+       <function>
+         <product>
+             <sum>
+               <property>atmosphere/T-R</property>
+               <value>-491.67</value>
+             </sum>
+             <value>0.5555555555</value>
+         </product>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-jet/TAT-degC">
+       <function>
+          <sum>
+            <property>propulsion/tat-c</property>
+            <value>0</value>
+          </sum>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-jet/EGT-degC">
+       <function>
+         <product>
+             <sum>
+               <property>../../engines/engine/egt-degf</property>
+               <value>-32.0</value>
+             </sum>
+             <value>0.5555555555</value>
+         </product>
+       </function>
+     </fcs_function>
+
+     <fcs_function name="systems/test-jet/TSFC">
+       <function>
+         <product>
+           <quotient>
+               <property>propulsion/engine/fuel-flow-rate-pps</property>
+               <property>propulsion/engine/thrust-lbs</property>
+           </quotient>
+           <value>3600.0</value>
+         </product> 
+       </function>
+     </fcs_function>
+
+
+  </channel>
+
+
+</system>

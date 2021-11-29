@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<system name="autoslats">
+
+  <channel name="Slats">
+
+     <switch name="systems/autoslats/logic">
+          <default value="0"/>
+          <test logic="OR" value="1">
+                fcs/flap-cmd-norm gt 0
+                velocities/mach lt 0.2
+                aero/alpha-rad gt 0.12
+          </test>
+          <output>systems/autoslats/slat-cmd-initial</output>
+     </switch>
+
+     <switch name="systems/autoslats/mach-limiter">
+          <default value="systems/autoslats/slat-cmd-initial"/>
+          <test value="0">
+                velocities/mach gt 0.92
+          </test>
+          <output>systems/autoslats/slat-cmd-norm</output>
+     </switch>
+
+   <kinematic name="Slats Control">
+     <input>systems/autoslats/slat-cmd-norm</input>
+     <traverse>
+       <setting>
+          <position>  0 </position>
+          <time>      0 </time>
+       </setting>
+       <setting>
+          <position>  1</position>
+          <time>      0.5 </time>
+       </setting>
+     </traverse>
+     <output>systems/autoslats/slat-pos-norm</output>
+   </kinematic>
+
+  </channel>
+
+</system>

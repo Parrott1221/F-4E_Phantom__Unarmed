@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<system name="drag">
+
+  <property value="1.0" >systems/drag/index</property>
+  <property value="1.0" >systems/drag/basic</property>
+  <property value="0.05">systems/drag/tank-600-gallon</property>
+  <property value="0.05">systems/drag/suu-23-gun-pod</property>
+  <property value="0.05">systems/drag/tank-370-gallon-left</property>
+  <property value="0.05">systems/drag/tank-370-gallon-right</property>
+  <property value="0.06">systems/drag/left-TER-bombs</property>
+  <property value="0.06">systems/drag/right-TER-bombs</property>
+  <property value="0.0" >systems/drag/station1</property>
+  <property value="0.0" >systems/drag/station2</property>
+  <property value="0.0" >systems/drag/station3</property>
+  <property value="0.0" >systems/drag/station4</property>
+  <property value="0.0" >systems/drag/station5</property>
+
+
+  <channel name="chan1">
+
+     <switch name="systems/drag/station1-logic">
+          <default value="systems/drag/tank-370-gallon-left"/>
+          <test value="0">
+                systems/armament/station1/released == 1
+          </test>
+          <output>systems/drag/station1</output>
+     </switch>
+
+     <switch name="systems/drag/station2-logic">
+          <default value="systems/drag/left-TER-bombs"/>
+          <test value="0.015">
+                systems/armament/station2/released == 1
+          </test>
+          <output>systems/drag/station2</output>
+     </switch>
+
+     <switch name="systems/drag/station3-logic">
+          <default value="0"/>
+          <test value="0">
+                systems/armament/station3/released == 1
+          </test>
+          <output>systems/drag/station3</output>
+     </switch>
+
+     <switch name="systems/drag/station4-logic">
+          <default value="systems/drag/right-TER-bombs"/>
+          <test value="0.015">
+                systems/armament/station2/released == 1
+          </test>
+          <output>systems/drag/station4</output>
+     </switch>
+
+     <switch name="systems/drag/station5-logic">
+          <default value="systems/drag/tank-370-gallon-right"/>
+          <test value="0">
+                systems/armament/station1/released == 1
+          </test>
+          <output>systems/drag/station5</output>
+     </switch>
+ 
+
+     <summer name="systems/drag/summer">
+        <input>  systems/drag/basic    </input>
+        <input>  systems/drag/station1 </input>
+        <input>  systems/drag/station2 </input>
+        <input>  systems/drag/station3 </input>
+        <input>  systems/drag/station4 </input>
+        <input>  systems/drag/station5 </input>
+
+        <output> systems/drag/index    </output>
+     </summer>
+
+  </channel>
+
+</system>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<system name="ab-workaround">
+
+<!--  This system copies the engine afterburner state to another
+      property so that it can be sent via multiplayer.  -->
+
+  <channel name="Afterburner-Workaround">
+
+     <switch name="systems/ab_workaround/logic-engine0">
+        <default value="0"/>
+          <test value="1">
+                /engines/engine[0]/augmentation == 1
+          </test>
+       <output>/sim/multiplay/generic/int[10]</output>
+     </switch>
+
+     <switch name="systems/ab_workaround/logic-engine1">
+        <default value="0"/>
+          <test value="1">
+                /engines/engine[1]/augmentation == 1
+          </test>
+       <output>/sim/multiplay/generic/int[11]</output>
+     </switch>
+
+  </channel>
+
+</system>
